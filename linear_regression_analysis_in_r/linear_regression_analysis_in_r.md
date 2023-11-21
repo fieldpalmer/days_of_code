@@ -215,3 +215,67 @@ This estimated error variance (\(\hat{\sigma}^2\)) helps in assessing the goodne
 ### Question:
 
 ## Answer:
+
+Certainly! Let's go through the steps to find the partial derivatives of the function \(f(\mathbf{x}; \beta_0, \beta_1)\) with respect to \(\beta_0\) and \(\beta_1\) as described in 1. (a) and then solve for \(\widehat{\beta}\_0\) and \(\widehat{\beta}\_1\) as outlined in 1. (b).
+
+### 1. (a) Partial Derivatives:
+
+Given \(f(\mathbf{x}; \beta_0, \beta_1)\), the function can represent the sum of squared differences in a simple linear regression model:
+
+\[ f(\mathbf{x}; \beta*0, \beta_1) = \sum*{i=1}^{n} (Y_i - (\beta_0 + \beta_1 x_i))^2 \]
+
+To find the partial derivatives of \(f\) with respect to \(\beta_0\) and \(\beta_1\), we'll differentiate \(f\) with respect to each parameter while treating the other parameter as constant.
+
+### Partial Derivative with respect to \(\beta_0\):
+
+\[
+\frac{\partial f}{\partial \beta*0} = -2 \sum*{i=1}^{n} (Y_i - (\beta_0 + \beta_1 x_i))
+\]
+
+### Partial Derivative with respect to \(\beta_1\):
+
+\[
+\frac{\partial f}{\partial \beta*1} = -2 \sum*{i=1}^{n} x_i (Y_i - (\beta_0 + \beta_1 x_i))
+\]
+
+### 1. (b) Solving for \(\widehat{\beta}\_0\) and \(\widehat{\beta}\_1\):
+
+To find the minimizers (\(\widehat{\beta}\_0\) and \(\widehat{\beta}\_1\)) of \(f\) by setting the partial derivatives to zero:
+
+### Setting \(\frac{\partial f}{\partial \beta_0} = 0\):
+
+\[
+-2 \sum\_{i=1}^{n} (Y_i - (\widehat{\beta}\_0 + \widehat{\beta}\_1 x_i)) = 0
+\]
+
+This leads to:
+
+\[
+\sum*{i=1}^{n} Y_i - n \widehat{\beta}\_0 - \widehat{\beta}\_1 \sum*{i=1}^{n} x_i = 0
+\]
+
+From which we can solve for \(\widehat{\beta}\_0\):
+
+\[
+\widehat{\beta}\_0 = \bar{Y} - \widehat{\beta}\_1 \bar{x}
+\]
+
+### Setting \(\frac{\partial f}{\partial \beta_1} = 0\):
+
+\[
+-2 \sum\_{i=1}^{n} x_i (Y_i - (\widehat{\beta}\_0 + \widehat{\beta}\_1 x_i)) = 0
+\]
+
+This leads to:
+
+\[
+\sum*{i=1}^{n} x_i Y_i - \widehat{\beta}\_0 \sum*{i=1}^{n} x*i - \widehat{\beta}\_1 \sum*{i=1}^{n} x_i^2 = 0
+\]
+
+From which we can solve for \(\widehat{\beta}\_1\):
+
+\[
+\widehat{\beta}_1 = \frac{\sum_{i=1}^{n} (x*i - \bar{x})(Y_i - \bar{Y})}{\sum*{i=1}^{n} (x_i - \bar{x})^2}
+\]
+
+These solutions for \(\widehat{\beta}\_0\) and \(\widehat{\beta}\_1\) represent the minimizers of the function \(f\) in the context of linear regression.
