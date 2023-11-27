@@ -320,3 +320,20 @@ Here are some key points and relevant formulas highlighted from the video:
    -  The relationship between T and F distributions is highlighted. Squaring a random variable with a T distribution results in a random variable with an F distribution (with specific degrees of freedom).
 
 Overall, the lesson emphasizes the importance of these tests in model building, assessing predictors' significance, and making informed decisions about which predictors to include in the final model based on their statistical significance and practical significance.
+
+
+## Confidence Intervals in the Regression Context
+
+I see that the transcript is quite lengthy, but I'm here to help! It seems that your transcript is about the construction of confidence intervals for individual regression parameters and confidence intervals for the mean of the response at specific predictor values within the context of linear regression.
+
+Here are the key points and formulas covered:
+
+1. **Confidence Intervals for Individual Regression Parameters**: The lecture discusses confidence intervals for individual parameters in a regression model. The formula for the confidence interval involves the point estimate of the parameter (beta hat), a critical value from the t-distribution (with degrees of freedom n - p + 1), and the standard error of the parameter estimate. The standard error is computed as the square root of sigma hat squared times a component of the X matrix.
+
+2. **Confint Function in R**: An R function, `confint`, is mentioned as a shortcut to compute confidence intervals for model parameters stored in a linear model object (`lm_`). This function automatically calculates confidence intervals for each model parameter.
+
+3. **Confidence Intervals for the Mean Response**: Moving on to confidence intervals for the mean response at given predictor values (X star). The point estimate for the mean response (y hat) is computed by plugging the new predictor values into the estimated model. The formula for the confidence interval involves the point estimator y hat, a t-critical value, and the standard error of the mean response estimate.
+
+4. **Predict Function in R**: Similar to the `confint` function, the `predict` function in R can be used to obtain confidence intervals for the mean response at new predictor values. The `predict` function requires arguments such as the linear model object (`lm`), the new data points for prediction, and whether a confidence interval or prediction interval is desired.
+
+The lecture emphasizes the importance of confidence intervals in regression analysis, providing both theoretical formulas for computing them manually and practical implementations using functions available in R. Confidence intervals help in quantifying the uncertainty associated with parameter estimates and mean responses in regression models.
